@@ -32,18 +32,27 @@ let package = Package(
         .target(
             name: "GTMSessionFetcherCore",
             path: "Sources/Core",
+            resources: [
+               .process("Resources/PrivacyInfo.xcprivacy")
+            ]
             publicHeadersPath: "Public"
         ),
         .target(
             name: "GTMSessionFetcherFull",
             dependencies: ["GTMSessionFetcherCore"],
             path: "Sources/Full",
+            resources: [
+               .process("Resources/PrivacyInfo.xcprivacy")
+            ]
             publicHeadersPath: "Public"
         ),
         .target(
             name: "GTMSessionFetcherLogView",
             dependencies: ["GTMSessionFetcherCore"],
             path: "Sources/LogView",
+            resources: [
+               .process("Resources/PrivacyInfo.xcprivacy")
+            ]
             publicHeadersPath: "Public"
         ),
         .testTarget(
